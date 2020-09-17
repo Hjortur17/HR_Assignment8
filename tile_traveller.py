@@ -1,20 +1,29 @@
 # Git Repo: https://github.com/Hjortur17/HR_Assignment8
 
-int(x) = 1
-int(y) = 1
+x = 1
+y = 1
 
-def moveUp():
+def moveUp(y):
     y += 1
+    return y
 
-def moveDown():
+def moveDown(y):
     y -= 1
+    return y
 
-def moveLeft():
+def moveLeft(x):
     x -= 1
+    return x
 
-def moveRight():
+def moveRight(x):
     x += 1
+    return x
 
-def checklocation(x,y):
+def checkLocation(x,y):
     return x,y
-    
+
+for locX in range(1, 4):
+    for locY in range(1, 4):
+        # if checkLocation
+            # You can travel: (N)orth or (E)ast or (S)outh.
+        print("Location:", checkLocation(locX, locY))
