@@ -26,7 +26,7 @@ def moveRight():
 def checkLocation(x, y):
     return x,y
 
-while checkLocation != (3,1):
+while checkLocation(x,y) != (3,1):
     if checkLocation(x, y) == (1, 1) or checkLocation(x,y) == (2, 1):
         print ("You can travel: (N)orth.")
         user_input = input("Direction: ")
@@ -36,7 +36,7 @@ while checkLocation != (3,1):
             moveUp()
         else:
             print ("Not a valid direction!")
-    elif checkLocation(x, y) == (1, 2) or checkLocation(x,y) == (3, 2):
+    elif checkLocation(x, y) == (1, 2):
         print ("You can travel: (N)orth or (E)ast or (S)outh.")
         user_input = input("Direction: ")
         user_lower = user_input.lower()
@@ -63,7 +63,7 @@ while checkLocation != (3,1):
             print ("Not a valid direction!")
     
     elif checkLocation(x, y) == (2, 2) or checkLocation(x, y) == (3, 3):
-        print ("You can travel: (S)outh or (W)est")
+        print ("You can travel: (S)outh or (W)est.")
         user_input = input("Direction: ")
         user_lower = user_input.lower()
 
@@ -75,17 +75,27 @@ while checkLocation != (3,1):
             print ("Not a valid direction!")
     
     elif checkLocation(x, y) == (2, 3):
-        print('You can travel: (W)est or (E)ast')
+        print('You can travel: (E)ast or (W)est.')
         user_input = input("Direction: ")
         user_lower = user_input.lower()
 
         if user_lower == 'w':
-            moveleft()
+            moveLeft()
         elif user_lower == 'e':
-            moveright()
+            moveRight()
         else:
             print("Not a valid direction!")
-    
 
+    elif checkLocation(x, y) == (3, 2):
+        print('You can travel: (N)orth or (S)outh.')
+        user_input = input("Direction: ")
+        user_lower = user_input.lower()
+
+        if user_lower == 'n':
+            moveUp()
+        elif user_lower == 's':
+            moveDown()
+        else:
+            print("Not a valid direction!")
 else:
     print("Victory!")
