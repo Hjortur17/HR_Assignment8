@@ -24,6 +24,12 @@ def checkLocation(x,y):
 
 for locX in range(1, 4):
     for locY in range(1, 4):
-        # if checkLocation
-            # You can travel: (N)orth or (E)ast or (S)outh.
-        print("Location:", checkLocation(locX, locY))
+        if checkLocation(x,y):
+            print ("You can travel: (N)orth.")
+            user_input = input("Direction: ")
+            if user_input.lower() == "n":
+                moveUp(y)
+            else:
+                print ("Not a valid direction!")
+
+        #print("Location:", checkLocation(locX, locY))
