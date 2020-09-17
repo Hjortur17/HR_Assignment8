@@ -3,33 +3,51 @@
 x = 1
 y = 1
 
-def moveUp(y):
+def moveUp():
+    global y
     y += 1
     return y
 
-def moveDown(y):
+def moveDown():
+    global y
     y -= 1
     return y
 
-def moveLeft(x):
+def moveLeft():
+    global x
     x -= 1
     return x
 
-def moveRight(x):
+def moveRight():
+    global x
     x += 1
     return x
 
-def checkLocation(x,y):
+def checkLocation(x, y):
     return x,y
 
-for locX in range(1, 4):
-    for locY in range(1, 4):
-        if checkLocation(x,y):
-            print ("You can travel: (N)orth.")
-            user_input = input("Direction: ")
-            if user_input.lower() == "n":
-                moveUp(y)
-            else:
-                print ("Not a valid direction!")
+while checkLocation != (3,3):
+    if checkLocation(x, y) == (1, 1):
+        print ("You can travel: (N)orth.")
+        user_input = input("Direction: ")
+        user_lower = user_input.lower()
 
-        #print("Location:", checkLocation(locX, locY))
+        if user_lower == "n":
+            moveUp()
+        else:
+            print ("Not a valid direction!")
+    elif checkLocation(x, y) == (1, 2):
+        print ("You can travel: (N)orth or (E)ast or (S)outh.")
+        user_input = input("Direction: ")
+        user_lower = user_input.lower()
+
+        if user_lower == "n":
+            moveUp()
+        elif user_lower == "e":
+            moveRight()
+        elif user_lower == "s":
+            moveDown()
+        else:
+            print ("Not a valid direction!")
+else:
+    print("Victory!")
