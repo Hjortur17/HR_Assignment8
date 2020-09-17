@@ -17,3 +17,4 @@ def moveRight():
 
 def checklocation(x,y):
     return x,y
+    
